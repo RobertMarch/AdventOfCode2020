@@ -8,9 +8,7 @@ def solve(input):
         if len(line.strip()) > 0:
             ids.add(calculate_seat_id(line))
 
-    for i in range(max(ids)):
-        if i <= min(ids) or i >= max(ids):
-            continue
+    for i in range(min(ids), max(ids)):
         if i not in ids:
             return i
 
