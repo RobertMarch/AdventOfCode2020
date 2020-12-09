@@ -1,8 +1,8 @@
-def run_tests(test_cases, solve):
+def run_tests(test_cases, solve, args=None):
     failed_test = False
     for case in test_cases:
         [expected_answer, case_input] = case
-        solution = solve(case_input)
+        solution = solve(case_input) if args is None else solve(case_input, args)
         if not solution == expected_answer:
             print('Error in test case: expected {}, got {} for input {}'.format(expected_answer, solution, case_input))
             failed_test = True
